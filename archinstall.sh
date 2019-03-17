@@ -9,7 +9,7 @@ echo 'type=83' | sfdisk /dev/sda
 #Format the created partition
 mkfs.ext4 /dev/sda1
 
-mount /devsda1 /mnt
+mount /dev/sda1 /mnt
 
 #Create a mirrorlist
 curl -s "https://www.archlinux.org/mirrorlist/?country=NL&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' > /etc/pacman.d/mirrorlist
