@@ -29,4 +29,17 @@ ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 #Generate /etc/adjtime
 hwclock --systohc
 
+#Create locales
 sed -i '/en_US.UTF/s/^#//g' /etc/locale.gen
+locale-gen
+echo 'en_US.UTF.UTF-8' > /etc/locale.conf
+
+#Networkconfig
+echo 'archi3' > /etc/hostname
+echo '127.0.0.1   localhost' >> /etc/hostname
+echo '::1   localhost' >> /etc/hostname
+echo '127.0.1.1   archi3.localdomain archi3' >> /etc/hostname
+
+#Ask for new password
+passwd
+
